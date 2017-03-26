@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+      function init_desktop_map(){
+        var myOptions = {
+          zoom: 15,
+          center: new google.maps.LatLng(65.8616739,23.13626350000004),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("gmap_desktop_canvas"), myOptions);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: new google.maps.LatLng(65.8616739, 23.13626350000004)
+        });
+        var infowindow = new google.maps.InfoWindow({
+    content:"<b>MassageTerapeuten Susanne Engman</b><br/>Vattenv&auml;gen 17<br/> Kalix"
+        });
+        google.maps.event.addListener(marker, "click", function(){
+            infowindow.open(map,marker);
+        });
+        infowindow.open(map,marker);
+      }
+
+      document.addEventListener("DOMContentLoaded", function(event) {
+          var mobile_site = document.getElementsByClassName("mobile_site")[0].cloneNode(true);
+          var desktop_site = document.getElementsByClassName("desktop_site")[0].cloneNode(true);
+
+          var mobile_gmap = document.getElementById("gmap_mobile_canvas");
+          mobile_gmap.parentNode.removeChild(mobile_gmap);
+          var desktop_gmap = document.getElementById("gmap_desktop_canvas");
+          desktop_gmap.parentNode.removeChild(desktop_gmap);
+
+          mobile_site.classList.remove("hidden");
+          desktop_site.classList.remove("hidden");
+
+          var use_mobile_site = window.screen.width < 600;
+
+          if (use_mobile_site) {
+            var body = document.getElementsByTagName("body")[0];
+            body.setAttribute("style", "padding-top: 51px; margin-bottom: 187px;")
+            body.appendChild(mobile_site);
+          }
+          else {
+              document.getElementsByTagName("body")[0].appendChild(desktop_site);
+          }
+
+
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          //script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+           //     'callback=init_map';
+          if (use_mobile_site) {
+            script.src = '//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCrgwSFZGR897csQrrR5OzK5GpUEzV4pis&callback=init_mobile_map';
+          }
+          else {
+            script.src = '//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCrgwSFZGR897csQrrR5OzK5GpUEzV4pis&callback=init_desktop_map';
+          }
+          document.head.appendChild(script);
+      });
+    </script>
+  <title>Massage Terapeuten Susanne Engman | Hem</title>
+  <link data-turbolinks-track="true" href="assets/application-670ecdf6e2b7f81d73a3db97ae5a9489.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="assets/application-160ba1d58aad81bc57d68e7e7336c183.js"></script>
+  <meta name="description" content="Jag erbjuder massage i centrala Kalix för dig som
+    behöver avkoppling eller behandling.">
+    <meta name="keywords" content="massage, massageterapeut, massageterapeuten,
+    susanne, engman, kalix, behandling, avkoppling, laser,
+    koppning, hot stone">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" id="viewport-iphone5" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="pVIZIEooeMzDQhGs70fcVYm3N0BBKtQk+Ec+aQYRax4=" name="csrf-token" />
+</head>
+<body>
+<div class="desktop_site hidden">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="">Hem</a></li>
+        <li><a href="erbjudanden.html">Erbjudanden</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div>
+            <a class="btn btn-primary btn-md navbar-btn" href="https://www.bokadirekt.se/places/massageterapeuten-susanne-engman-6151" target="_blank">Boka</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <article id="wrapper">
+  <section id="header">
+  <a><img alt="Logo" src="assets/logo-b72dd829b58fbfb5121e325e9267b2a8.jpg" /></a>
+</section>
+<section class="container">
+  <div id="bilder" class="bilder">
+    <img alt="Rum 2" src="assets/rum_2-cd2f86ad9df81766ce069e862605f13c.jpg" />
+    <img alt="Massage 2" src="assets/massage_2-3628321ea63f22bf28d614788619d72a.jpg" />
+    <img alt="Stenar 2" src="assets/stenar_2-4b2cee8c9388ccbf09c9e01d0b56be4f.jpg" />
+    <img alt="Blomma 2" src="assets/blomma_2-5c8f032f4240f56d19b7ca211a4d1cb2.jpg" />
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-sm-4">
+      <img alt="Profil 2" class="profile" src="assets/profil_2-3a9e0b56ef969cb25f9612782f9d42fd.jpg" />
+    </div>
+    <div class="col-sm-8">
+      <h2><span style="font-weight:bold">Välkommen!</span></h2>
+      <p>Jag heter Susanne Engman och är utbildad Dipl. Massageterapeut och
+      Certifierad massör av Branchrådet.
+      Jag erbjuder Klassisk Massage, Hot Stone Massage, Laserbehandling och
+      Koppning. Massagen anpassas efter varje specifik person och det finns
+      även möjlighet att få träningsprogram och rådgivning. Det går även att
+      boka lokalerna för trivselkväll som läggs upp efter ert önskemål.
+      <p>
+      <p>
+        <a class="btn btn-primary btn-lg" role="button" href="https://www.bokadirekt.se/places/massageterapeuten-susanne-engman-6151" target="_blank">Boka här!</a>
+      </p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-sm-5">
+      <h3 style="margin-top:0;margin-bottom:5px">Hitta hit</h3>
+      <p><b>MassageTerapeuten Susanne Engman</b></p>
+      <p>Vattenvägen 17, 1 trp</p>
+      <p>952 35 Kalix</p>
+    </div>
+    <div class="col-sm-7">
+      <div style="overflow:hidden;height:300px;width:100%;">
+  <div id="gmap_desktop_canvas" style="height:300px;width:100%;border:1px solid rgb(171, 171, 171);"></div>
+  <style>
+    #gmap_desktop_canvas img {
+      max-width: none !important;
+      background: none !important;
+    }
+  </style>
+</div>
+<script type="text/javascript">
+
+
+  //google.maps.event.addDomListener(window, 'load', init_map);
+  //window.onload = loadScript;
+</script>
+
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+    $('.bilder').slick({
+      autoplay: true,
+      autoplaySpeed: 5000,
+      arrows: false,
+      slide: 'img',
+      dots: true,
+      fade: true
+    });
+  });
+
+  $("a:contains('Hem')").parent().addClass('active')
+  </script>
+</section>
+
+  </article>
+
+  <footer id="footer">
+  <div class="container" style="padding-left:16px">
+    <div class="row">
+      <div class="col-xs-4" style="text-align:left">
+        <p style="margin-bottom:1px">Kontakt</p>
+        <small>MassageTerapeuten Susanne Engman<br>
+          Vattenvägen 17, 1 trp<br>
+          952 35 Kalix<br>
+          072-731 49 46<br>
+          <a href="mailto:susanneengman@telia.com">susanneengman@telia.com</a>
+        </small>
+      </div>
+      <div class="col-xs-4">
+        <a class="social"
+          href="https://www.facebook.com/MassageTerapeutenSusanneEngman"
+          target="_blank">
+          <img alt="Facebook128 opaque45" class="bottom" src="assets/facebook128_opaque45-9ab6bdaa4c8fc3a4c1724c233e866149.png" />
+          <img alt="Facebook128 blue" class="top" src="assets/facebook128_blue-ecfb4a35bb5a1fd30d92bdc31aeffa97.png" />
+        </a>
+      </div>
+      <div class="col-xs-4">
+        <a class="social" href="http://www.instagram.com/massageterapeutensusanneengman"
+          target="_blank">
+          <img alt="Instagram128 opaque45" class="bottom" src="assets/instagram128_opaque45-51e181fb876056b573d85a97ebee442f.png" />
+          <img alt="Instagram128 blue" class="top" src="assets/instagram128_blue-f6a931c5dea7c394c37d66f33f7eb710.png" />
+        </a>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <small>Made by <a href="mailto:jarileskinen@icloud.com" style="color:black"><strong>Jari Leskinen</strong></a></small>
+    </div>
+  </div>
+</footer>
+</div>
+
+<div class="mobile_site hidden">
+
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation"
+  style="margin-bottom:0px">
+  <div class="navbar-header pull-left">
+    <a class="navbar-brand" href="">
+      <img alt="Blomma" src="assets/blomma-1c9fa912ff186619ab8be2f0469b3004.png" />
+    </a>
+  </div>
+  <div class="navbar-header pull-right">
+    <div>
+      <a class="btn btn-primary btn-md navbar-btn" href="https://www.bokadirekt.se/places/massageterapeuten-susanne-engman-6151" target="_blank">Boka</a>
+    </div>
+  </div>
+    <ul class="nav navbar-nav navbar-mobile">
+      <li><a href="erbjudanden.html">Erbjudanden</a></li>
+    </ul>
+</div>
+
+    <a><img alt="Logo" class="logo-mobile" src="assets/logo-b72dd829b58fbfb5121e325e9267b2a8.jpg" /></a>
+<section class="container">
+  <div id="bilder" class="bilder">
+  <img alt="Rum 2" src="assets/rum_2-cd2f86ad9df81766ce069e862605f13c.jpg" />
+  <img alt="Massage 2" src="assets/massage_2-3628321ea63f22bf28d614788619d72a.jpg" />
+  <img alt="Stenar 2" src="assets/stenar_2-4b2cee8c9388ccbf09c9e01d0b56be4f.jpg" />
+  <img alt="Blomma 2" src="assets/blomma_2-5c8f032f4240f56d19b7ca211a4d1cb2.jpg" />
+</div>
+
+
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <img alt="Profil 2" class="profile profile-mobile" src="assets/profil_2-3a9e0b56ef969cb25f9612782f9d42fd.jpg" />
+    </div>
+    <div class="col-md-8">
+      <h2><span style="font-weight:bold">Välkommen!</span></h2>
+      <p>Jag heter Susanne Engman och är utbildad Dipl. Massageterapeut och
+      Certifierad massör av Branchrådet.
+      Jag erbjuder Klassisk Massage, Hot Stone Massage, Laserbehandling och
+      Koppning. Massagen anpassas efter varje specifik person och det finns
+      även möjlighet att få träningsprogram och rådgivning. Det går även att
+      boka lokalerna för trivselkväll som läggs upp efter ert önskemål.
+      <p>
+      <p style="margin-bottom:0">
+        <a class="btn btn-primary btn-lg" role="button" href="https://www.bokadirekt.se/places/massageterapeuten-susanne-engman-6151" target="_blank">Boka här!</a>
+      </p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <h3 style="margin-top:0;margin-bottom:5px">Hitta hit</h3>
+      <p><b>MassageTerapeuten Susanne Engman</b></p>
+      <p>Vattenvägen 17, 1 trp</p>
+      <p>952 35 Kalix</p>
+    </div>
+    <div class="col-md-7" style="padding-top:10px">
+      <!--
+      <img src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=500x500&maptype=roadmap&markers=color:red%7Clabel:S%7C65.8616739,23.13626350000004&key=AIzaSyCrgwSFZGR897csQrrR5OzK5GpUEzV4pis" alt="Karta till Massageterapeuten Susanne Engman"
+      style="width:100%;height:auto;border:1px solid rgb(171,171,171);">-->
+      <div style="overflow:hidden;height:300px;width:100%;">
+  <div id="gmap_mobile_canvas" style="height:300px;width:100%;border:1px solid rgb(171,171,171);"></div>
+  <style>
+    #gmap_mobile_canvas img {
+      max-width: none !important;
+      background: none !important;
+    }
+  </style>
+</div>
+<script type="text/javascript">
+  function init_mobile_map(){
+    var myOptions = {
+      zoom: 15,
+      center: new google.maps.LatLng(65.8616739,23.13626350000004),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("gmap_mobile_canvas"), myOptions);
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(65.8616739, 23.13626350000004)
+    });
+    //var infowindow = new google.maps.InfoWindow({
+    //  content:"<b>MassageTerapeuten Susanne Engman</b><br/>Vattenv&auml;gen 17<br/> Kalix"
+    //});
+    //google.maps.event.addListener(marker, "click", function(){
+    //    infowindow.open(map,marker);
+    //});
+    //infowindow.open(map,marker);
+  }
+
+  //google.maps.event.addDomListener(window, 'load', init_map);
+  //window.onload = loadScript;
+</script>
+
+    </div>
+  </div>
+
+  <script>
+$(document).ready(function(){
+  $('.bilder').slick({
+    autoplay: true,
+    draggable: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    slide: 'img',
+    dots: true,
+  });
+});
+  </script>
+</section>
+
+  <div style="width:100%;height:15px;background:#FDFDFD"></div>
+  <footer id="footer">
+  <div class="container">
+    <div class="row" style="margin-top:10px">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-4 social-media-col">
+        <a class="social"
+          href="https://www.facebook.com/MassageTerapeutenSusanneEngman"
+          target="_blank">
+          <img alt="Facebook128 blue" src="assets/facebook128_blue-ecfb4a35bb5a1fd30d92bdc31aeffa97.png" />
+        </a>
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-4">
+        <a class="social" href="http://instagram.com/massageterapeutensusanneengman"
+          target="_blank">
+          <img alt="Instagram128 blue" src="assets/instagram128_blue-f6a931c5dea7c394c37d66f33f7eb710.png" />
+        </a>
+      </div>
+      <div class="col-xs-1"></div>
+    </div>
+    <hr>
+    <div style="text-align:left;margin-bottom:20px">
+        <p style="margin-bottom:1px">Kontakt</p>
+        <small>MassageTerapeuten Susanne Engman<br>
+          Vattenvägen 17, 1 trp<br>
+          952 35 Kalix<br>
+          072-731 49 46<br>
+          <a href="mailto:susanneengman@telia.com">susanneengman@telia.com</a>
+        </small>
+      </div>
+      <small>Made by <a href="mailto:jarileskinen@icloud.com" style="color:black"><strong>Jari Leskinen</strong></a></small>
+  </div>
+</footer>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52301582-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
