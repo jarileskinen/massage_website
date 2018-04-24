@@ -28,6 +28,7 @@
         infowindow.open(map,marker);
       }
 
+
       document.addEventListener("DOMContentLoaded", function(event) {
           var mobile_site = document.getElementsByClassName("mobile_site")[0].cloneNode(true);
           var desktop_site = document.getElementsByClassName("desktop_site")[0].cloneNode(true);
@@ -96,7 +97,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="">Hem</a></li>
-        <li><a href="erbjudanden.html">Erbjudanden</a></li>
+        <li><a target="_self" href="erbjudanden.html">Erbjudanden</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
