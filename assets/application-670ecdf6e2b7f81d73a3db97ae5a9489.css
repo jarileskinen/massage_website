@@ -6615,3 +6615,6 @@ a:hover {
 .slick-dots li.slick-active button:before {
     opacity: 0.75
 }
+.subtext {
+    color: #999;
+}
